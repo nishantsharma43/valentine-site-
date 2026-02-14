@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe6eb, #fff6f9);
+      color: #333;
+      text-align: center;
+    }.container { padding: 40px 20px; }
+
+h1 { color: #e91e63; }
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 22px;
+  border-radius: 25px;
+  border: none;
+  background: #e91e63;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn:hover { background: #c2185b; }
+
+.page { display: none; }
+
+img {
+  width: 260px;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.quote {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 15px auto;
+  line-height: 1.6;
+}
+
+#lockScreen {
+  position: fixed;
+  inset: 0;
+  background: #fff0f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body><!-- Password Screen --><div id="lockScreen">
+  <h1>🔐 Only For You</h1>
+  <p>This little world is meant for someone very special.</p>
+  <input type="password" id="password" placeholder="Enter Password">
+  <button class="btn" onclick="checkPassword()">Enter</button>
+</div><!-- Main Content --><div class="container" id="main" style="display:none;">  <!-- Navigation -->  <div>
+    <button class="btn" onclick="showPage('home')">Home</button>
+    <button class="btn" onclick="showPage('memories')">Moments</button>
+    <button class="btn" onclick="showPage('promise')">Promise</button>
+    <button class="btn" onclick="showPage('hidden')">A Secret</button>
+  </div>  <!-- Home Page -->  <div id="home" class="page">
+    <h1>You Came Into My Life… And Everything Changed ❤️</h1>
+    <p class="quote">
+      I don’t know how it happened, or when it happened,
+      but somewhere between ordinary days and random thoughts…
+      you became the most beautiful part of my life.
+    </p>
+    <img src="photo1.jpg">
+  </div>  <!-- Memories Page -->  <div id="memories" class="page">
+    <h1>Every Day Feels Different Because of You</h1>
+    <p class="quote">
+      It feels like my prayers were finally heard…
+      like a wish I once made quietly has come true.
+      Maybe that’s why every morning feels lighter,
+      and every evening feels incomplete without you.
+    </p>
+    <img src="photo2.jpg"><p class="quote">
+  These days, no matter what I do,
+  somehow I see you in every plan,
+  every dream,
+  every version of my future.
+</p>
+
+  </div>  <!-- Promise Page -->  <div id="promise" class="page">
+    <h1>I’m Not Here For A Moment. I’m Here To Stay.</h1><p class="quote">
+  I am not walking into your life temporarily.
+  I am here with the intention to stay,
+  to build,
+  to grow,
+  to see a future together.
+</p>
+
+<p class="quote">
+  I don’t believe in leaving when things get hard.
+  I believe in holding tighter.
+  In choosing the same person again and again.
+</p>
+
+<p class="quote">
+  And if life ever feels heavy,
+  if you ever need me —
+  just call.
+  No reason needed.
+  I’ll be there.
+</p>
+
+  </div>  <!-- Hidden Page -->  <div id="hidden" class="page">
+    <h1>A Little Truth I Don’t Say Often…</h1><p class="quote">
+  Loving you is not something I planned.
+  It’s something that quietly became
+  the most certain feeling I have.
+</p>
+
+<p class="quote">
+  I don’t promise perfection.
+  I don’t promise a life without problems.
+  But I promise this —
+  I won’t walk away.
+</p>
+
+<p class="quote">
+  Unless destiny itself disagrees,
+  I see this journey… with you.
+</p>
+
+  </div></div><script>
+  const correctPassword = "1234"; // change this
+
+  function checkPassword() {
+    const entered = document.getElementById('password').value;
+    if (entered === correctPassword) {
+      document.getElementById('lockScreen').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+      showPage('home');
+    } else {
+      alert('Wrong password ❤️');
+    }
+  }
+
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+    document.getElementById(pageId).style.display = 'block';
+  }
+</script></body>
+</html>
